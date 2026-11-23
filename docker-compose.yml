@@ -1,0 +1,14 @@
+name: sistema_estudantes
+
+services:
+  mongo:
+    image: mongo:8.0
+    container_name: sistema_estudantes_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
